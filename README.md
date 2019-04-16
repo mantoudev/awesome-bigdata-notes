@@ -4,7 +4,6 @@ Learning and exercise notes.
 - [JVM](#JVM)
 - [Concurrent](#Concurrent)
 - [BigData](#BigData)
-- [Machine/Deep Learning](#Machine/Deep Learning)
 
 ## JVM
 
