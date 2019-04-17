@@ -3,6 +3,7 @@ package com.mantoudev.concurrent.monitor;
 import java.util.Queue;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.LockSupport;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
@@ -24,6 +25,9 @@ public class BlockedQueue<T> {
      * @param x
      */
     void enq(T x) {
+        Lock
+
+
         lock.lock();
         while (队列已满) {
             try {

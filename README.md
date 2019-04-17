@@ -9,11 +9,12 @@ Learning and exercise notes.
 
 ## Concurrent
 
-| #    | Title                                      | Tag                | Desc_CN               |
-| :--- | :------------------------------------------| :------------------| :-------------------- |
-| 1    | [Monitor][1]                               | Synchronized,MESA  | 管程                   |
-
+| #   | Title                 | Tag               | Desc          |
+| --- | --------------------- | ----------------- | ------------- |
+| 1   | [Monitor][1]          | Synchronized,MESA | 管程          |
+| 2   | [Thread Lifecycle][2] | Thread            | 线程-生命周期 |
 
 
 
 [1]: https://github.com/mantoudev/routine/tree/master/concurrent/monitor
+[2]: https://github.com/mantoudev/routine/tree/master/concurrent/thread-lifecycle
