@@ -17,7 +17,7 @@
 同一时刻只允许一个线程访问共享资源。
 ==将共享变量及其对共享变量的操作统一封装起来==。管程 X 将共享变量 queue 这个队列和相关的操作入队 enq()、出队 deq() 都封装起来了; 线程 A 和线程 B 如果想访问共享变量 queue，只能通过调用管程提供的 enq()、deq() 方法来实 现;enq()、deq() 保证互斥性，只允许一个线程进入管程。
 
-![互斥](https://github.com/mantoudev/routine/blob/master/images/j.u.c/jk-concurrent-monitor-1.png)
+![互斥](https://github.com/mantoudev/routine/blob/master/assets/concurrent/jk-concurrent-monitor-1.png)
 
 #### 2.2 同步
 线程之间如何通信、协作。
@@ -30,7 +30,7 @@
 
 条件变量，每个条件变量都对应有一个等待队列。条件变量 A 和条件变量 B 分别都有自己的等待队列。
 
-![同步](https://github.com/mantoudev/routine/blob/master/images/j.u.c/jk-concurrent-monitor-2.png)
+![同步](https://github.com/mantoudev/routine/blob/master/assets/concurrent/jk-concurrent-monitor-2.png)
 
 假设有个线程 T1 执行出队操作，不过需要注意的是执行出队操作，有个前提条件，就是队列不 能是空的，而队列不空这个前提条件就是管程里的条件变量。 如果线程 T1 进入管程后恰好发现 队列是空的，那怎么办呢?等待啊，去哪里等呢?就去条件变量对应的等待队列里面等。此时线 程 T1 就去“队列不空”这个条件变量的等待队列中等待。这个过程类似于大夫发现你要去验个 血，于是给你开了个验血的单子，你呢就去验血的队伍里排队。线程 T1 进入条件变量的等待队 列后，是允许其他线程进入管程的。这和你去验血的时候，医生可以给其他患者诊治，道理都是 一样的。
 
@@ -108,7 +108,7 @@ public class BlockedQueue<T> {
 
 
 ```
-while(条件不满足) {  
+while(条件不满足) {
 wait();
 }
 ```
@@ -127,6 +127,6 @@ Hasen 模型、Hoare 模型和 MESA 模型的一个核心区别就是当条件�
 ## 5.总结
 Java 参考了 MESA 模型，语言内置的管程(synchronized)对 MESA 模型进行了精简。MESA 模型中，条件变量可以有多个，Java 语言内置的管程里只有一个条件变量。具体如下图所示。
 
-![image](https://github.com/mantoudev/routine/blob/master/images/j.u.c/jk-concurrent-monitor-3.png)
+![image](https://github.com/mantoudev/routine/blob/master/assets/concurrent/jk-concurrent-monitor-3.png)
 
 Java 内置的管程方案(synchronized)使用简单，synchronized 关键字修饰的代码块，在编译 期会自动生成相关加锁和解锁的代码，但是仅支持一个条件变量;而 Java SDK 并发包实现的管 程支持多个条件变量，不过并发包里的锁，需要开发人员自己进行加锁和解锁操作。
