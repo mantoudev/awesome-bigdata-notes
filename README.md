@@ -23,4 +23,5 @@ Learning and exercise notes.
 [2]: https://github.com/mantoudev/routine/tree/master/concurrent/thread-lifecycle
 [3]: https://github.com/mantoudev/routine/tree/master/concurrent/thread-create
 [4]: https://github.com/mantoudev/routine/tree/master/concurrent/thread-localVariable
-[5]: https://github.com/mantoudev/routine/tree/master/concurrent/thread-localVariable
+[5]: https://github.com/mantoudev/routine/tree/master/concurrent/01-visibility%20%26%20atomic%20%26%20order
+[6]: https://github.com/mantoudev/routine/tree/master/concurrent/02-Java%20Meroy%20Model
