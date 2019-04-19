@@ -25,9 +25,6 @@ public class BlockedQueue<T> {
      * @param x
      */
     void enq(T x) {
-        Lock
-
-
         lock.lock();
         while (队列已满) {
             try {
