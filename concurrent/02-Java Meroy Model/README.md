@@ -39,3 +39,95 @@ Class VolatileExample {
 }
 ```
 按照程序的顺序，第 6 行代码 “x = 42;” Happens-Before 于第 7 行代码 “v = true;”，这就是规则 1 的内容，也比 较符合单线程里面的思维:程序前面对某个变量的修改一定是对后续操作可见的。
+
+### 2.2 volatile
+一个 volatile 变量的写操作， Happens-Before 于后续对这个volatile
+变量的读操作。
+
+### 2.3 传递性
+如果 A Happens-Before B，且 B Happens-Before C，那么 A Happens-Before C。
+![](assets/markdown-img-paste-20190419150156492.png)
+
+1. “x=42” Happens-Before 写变量 “v=true” ，这是规则 1 的内容;
+2. 写变量“v=true” Happens-Before 读变量 “v=true”，这是规则 2 的内容 。
+
+**结论：**x=42” Happens-Before 读变 量“v=true”。
+
+如果线程 B 读到了“v=true”，那么线程 A 设置的“x=42”对线程 B 是可见的。也就是 说，线程 B 能看到 “x == 42” ，有没有一种恍然大悟的感觉?这就是 1.5 版本对 volatile 语义的增强，这个增强意义重大，1.5 版本的并发工具包(java.util.concurrent) 就是靠 volatile 语义来搞定可见性的，
+
+### 2.4 管程中的锁规则
+一个锁的解锁 Happens-Before 于后续对这个锁的加锁。
+管程是一种通用的同步原语，在 Java 中指的就是 synchronized，synchronized 是 Java 里对管程的实现。
+
+管程中的锁在 Java 里是隐式实现的，例如下面的代码，在进入同步块之前，会自动加锁， 而在代码块执行完会自动释放锁，加锁以及释放锁都是编译器帮我们实现的。
+
+```
+synchronized (this){
+  // x是共享变量，初始值 = 10
+  if (this.x < 12){
+    this.x = 12;
+  }
+}// 此处解锁
+```
+假设 x 的初始值是 10，线程 A 执行完代码块后 x 的值会变成 12(执行完自动释放锁)，线程 B 进入代码块时，能够看到 线程 A 对 x 的写操作，也就是线程 B 能够看到 x==12。
+
+### 2.5 线程start()规则
+主线程 A 启动子线程 B 后，子线程 B 能够看到主线程在启动子线程 B 前的操作。
+
+如果线程 A 调用线程 B 的 start() 方法(即在线程 A 中启动线程 B)，那么该 start() 操作 Happens-Before 于线程 B 中的任意操作。具体可参考下面示例代码。
+
+```
+Thread B = new Thread(()->{
+  // 主线程调用 B.start()之前
+  // 所有对共享变量的修改，此处皆可见
+  // 此例中，var==77
+})；
+// 此处对共享变量 var 修改
+var = 77;
+// 主线程启动子线程
+B.start();
+
+```
+
+### 2.6 线程join()规则
+**join()**：主线程 A 等待子线程 B 完成(主线程 A 通过调用子线程 B 的 join() 方法实现)，当子线程 B 完成后(主线程 A 中 join() 方法返回)，主线程能够看到子线程的操作。当然所谓的“看到”，指的是对共享变量的操作。
+
+如果在线程 A 中，调用线程 B 的 join() 并成功返回，那么线程 B 中的任
+意操作 Happens-Before 于该 join() 操作的返回。具体可参考下面示例代码。
+
+```
+Thread B = new Thread(()->
+  // 此处对共享变量var修改
+  var = 66;
+});
+
+// 例如此处对共享变量修改，则这个修改结果对线程B可见
+// 主线程启动子线程
+B.start()；
+B.join();
+
+// 子线程对所有共享变量的修改
+// 在主线程中调用 B.join()之后皆可见
+// 此例中，var == 66
+```
+
+### 2.7 final
+final 修饰变量时，初衷是告诉编译器:这个变量生而不变，可以可劲儿优化。
+
+#### (1) 逸出
+在下面例子中，在构造函数里面将 this 赋值给 了全局变量 global.obj，这就是“逸出”，线程通过 global.obj 读取 x 是有可能读到 0 的。因此我们一定要避免“逸出”。因此我们一定要避免“逸出”。
+
+```
+// 以下代码来源于【参考 1】
+final int x;
+// 错误的构造函数
+public FinalFieldExample() {
+  x=3;
+  y=4;
+  // 此处就是讲 this 逸出，
+  global.obj = this;
+}
+```
+
+## 3. 总结
+在 Java 语言里面，Happens-Before 的语义本质上是一种可见性，A Happens-Before B 意味着 A 事件对 B 事件来说是可见的，无论 A 事件和 B 事件是否发生在同一个线程里。 例如 A 事件发生在线程 1 上，B 事件发生在线程 2 上，Happens-Before 规则保证线程 2 上也能看到 A 事件的发生。

@@ -9,19 +9,18 @@ Learning and exercise notes.
 
 ## Concurrent
 
-| #   | Title                            | Tag               | Desc                                 | 
-| --- | -------------------------------- | ----------------- | ------------------------------------ |
-| 1   | [Monitor][1]                     | Synchronized,MESA | 管程                                 |
-| 2   | [Thread Lifecycle][2]            | Thread            | 线程-生命周期                        |
-| 3   | [Thread Create][3]               | Thread            | 线程-创建数量                        |
-| 4   | [Thread Local Variable][4]       | Thread            | 线程-局部变量                        |
-| 5   | [Visibility & Atomic & Order][5] | Thread            | 可见性、原子性、有序性               |
-| 6   | [Java Memory Model][6]           | Merory Model      | Java内存模型，解决可见性、有序性问题 |
+| #   | Title                            | Tag               | Desc                               |
+| --- | -------------------------------- | ----------------- | ---------------------------------- |
+| 1   | [Visibility & Atomic & Order][1] | Synchronized,MESA | 可见性、原子性、有序性             |
+| 2   | [Java Memory Model][2]           | Thread            | Java内存模型，解决可见性、有序性题 |
+| 8   | [Monitor][8]                     | Thread            | 管程                               |
+| 9   | [Thread Lifecycle][9]            | Merory Model      | 线程-生命周期                      |
+| 10  | [Thread Create][10]              | Thread            | 线程-创建数量                      |
+| 11  | [Thread Local Variable][11]      | Thread            | 线程-局部变量                      |
 
-
-[1]: https://github.com/mantoudev/routine/tree/master/concurrent/monitor
-[2]: https://github.com/mantoudev/routine/tree/master/concurrent/thread-lifecycle
-[3]: https://github.com/mantoudev/routine/tree/master/concurrent/thread-create
-[4]: https://github.com/mantoudev/routine/tree/master/concurrent/thread-localVariable
-[5]: https://github.com/mantoudev/routine/tree/master/concurrent/01-visibility%20%26%20atomic%20%26%20order
-[6]: https://github.com/mantoudev/routine/tree/master/concurrent/02-Java%20Meroy%20Model
+[1]: https://github.com/mantoudev/routine/tree/master/concurrent/01-visibility%20%26%20atomic%20%26%20order
+[2]: https://github.com/mantoudev/routine/tree/master/concurrent/02-Java%20Meroy%20Model
+[8]: https://github.com/mantoudev/routine/tree/master/concurrent/monitor
+[9]: https://github.com/mantoudev/routine/tree/master/concurrent/thread-lifecycle
+[10]: https://github.com/mantoudev/routine/tree/master/concurrent/thread-create
+[11]: https://github.com/mantoudev/routine/tree/master/concurrent/thread-localVariable
