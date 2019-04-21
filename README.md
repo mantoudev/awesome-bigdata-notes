@@ -28,6 +28,7 @@ Learning and exercise notes.
 [3]: https://github.com/mantoudev/routine/tree/master/Concurrency/03-Mutex%20Lock:Atomic
 [4]: https://github.com/mantoudev/routine/tree/master/Concurrency/04-Mutex%20Lock(2)
 [5]: https://github.com/mantoudev/routine/tree/master/Concurrency/05-Deadlock
+[6]: https://github.com/mantoudev/routine/tree/master/Concurrency/06-Wait-Notify
 [8]: https://github.com/mantoudev/routine/tree/master/Concurrency/08-Monitor
 [9]: https://github.com/mantoudev/routine/tree/master/Concurrency/09-Thread:create
 [10]: https://github.com/mantoudev/routine/tree/master/Concurrency/10-Thread:lifecyle
