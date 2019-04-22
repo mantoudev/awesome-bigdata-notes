@@ -77,7 +77,7 @@ class SafeCalc {
   synchronized long get() {
     return value;
   }
-  synchronized void addOne{
+  synchroniz ed void addOne{
     value += 1；
   }
 }
