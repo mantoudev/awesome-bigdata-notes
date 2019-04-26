@@ -111,7 +111,7 @@ while(条件不满足) {
 wait();
 }
 ```
-Hasen 模型、Hoare 模型和 MESA 模型的一个核心区别就是当条件满足后，如何通知相关线 程。管程要求同一时刻只允许一个线程执行，那当线程 T2 的操作使线程 T1 等待的条件满足 时，T1 和 T2 究竟谁可以执行呢?
+Hasen 模型、Hoare 模型和 MESA 模型的一个核心区别就是当条件满足后，如何通知相关线程。管程要求同一时刻只允许一个线程执行，那当线程 T2 的操作使线程 T1 等待的条件满足 时，T1 和 T2 究竟谁可以执行呢?
 
 1. Hasen 模型里面，要求 notify() 放在代码的最后，这样 T2 通知完 T1 后，T2 就结束了，然 后 T1 再执行，这样就能保证同一时刻只有一个线程执行。
 2. Hoare 模型里面，T2 通知完 T1 后，T2 阻塞，T1 马上执行;等 T1 执行完，再唤醒 T2，也 能保证同一时刻只有一个线程执行。但是相比 Hasen 模型，T2 多了一次阻塞唤醒操作。
@@ -128,4 +128,4 @@ Java 参考了 MESA 模型，语言内置的管程(synchronized)对 MESA 模型�
 
 <img width="300" alt="同步" src="https://github.com/mantoudev/routine/blob/master/assets/concurrent/jk-concurrent-monitor-3.png"/>
 
-Java 内置的管程方案(synchronized)使用简单，synchronized 关键字修饰的代码块，在编译 期会自动生成相关加锁和解锁的代码，但是仅支持一个条件变量;而 Java SDK 并发包实现的管 程支持多个条件变量，不过并发包里的锁，需要开发人员自己进行加锁和解锁操作。
+Java 内置的管程方案(synchronized)使用简单，synchronized 关键字修饰的代码块，在编译期会自动生成相关加锁和解锁的代码，但是仅支持一个条件变量;而 Java SDK 并发包实现的管程支持多个条件变量，不过并发包里的锁，需要开发人员自己进行加锁和解锁操作。
