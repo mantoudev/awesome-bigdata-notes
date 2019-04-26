@@ -54,3 +54,7 @@ public class BlockedQueue<T>{
   }
 }
 ```
+
+Lock 和 Condition 实现的管程，线程等待和通知需要调用 await()、 signal()、signalAll()，它们的语义和 wait()、notify()、notifyAll() 是相同的。
+
+但是不一样的是，Lock&Condition 实现的管程里只能使用前面的 await()、signal()、signalAll()，而后面的 wait()、notify()、notifyAll() 只有在 synchronized 实现的管程里才能使用。
