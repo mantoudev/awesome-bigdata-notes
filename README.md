@@ -6,7 +6,6 @@ Learning and exercise notes.
 - [JVM](#JVM)
 - [Hbase](#Hbase)
 
-## JVM
 
 ## Concurrency
 
@@ -42,3 +41,10 @@ Learning and exercise notes.
 [12]: https://github.com/mantoudev/routine/tree/master/Concurrency/12-OO%20thinking%20for%20concurrency
 [14]: https://github.com/mantoudev/routine/tree/master/Concurrency/14-Lock
 [15]: https://github.com/mantoudev/routine/tree/master/Concurrency/15-Condition
+
+## HBase
+| #   | Title                   | Tag          | Desc       |
+| --- | ----------------------- | ------------ | ---------- |
+| 1   | [Hbase architecture][1] | architecture | HBase 架构 |
+
+[1]: https://github.com/mantoudev/routine/blob/master/HBase/01-HBase%20architecture.md
