@@ -33,7 +33,7 @@ Mutation.setDurability(setDurability.SKIP_WAL)
 
 Put、Append、Increment、Delete都是Mutation子类，所有都有setDurability()方法。这样可以让数据操作快点，但是不建议这样做。
 
-### 2.2 延迟(异步)同步写入WAL 
+### 2.2 延迟(异步)同步写入WAL
 
 ```
 Mutation.setDurability(Durability.ASYNC_WAL)
@@ -80,7 +80,7 @@ Master会负责定期去清理.oldlogs文件夹，条件是“当这个WAL不需
 - WAL存储在HDFS上，MemStore存储在内存中，HFile存储在HDFS中
 - 数据先写入WAL，再放入MemStore，最后持久化到HFile中。
 
-**问题：**数据在进入HFile之前已经被存储到HDFS一次了，为什么还需要被放入MemStore?
+**问题：** 数据在进入HFile之前已经被存储到HDFS一次了，为什么还需要被放入MemStore?  
 **A**:
 因为HDFS上的文件只能创建、追加、删除，不能修改。对于一个数据库来说，按顺序的存放数据是性能的保障。使用内存先将数据整理成顺序存放，然后一起写入硬盘。
 MemStore存在的意义是维持数据按照rowkey顺序排列，而不是做一个缓存。
