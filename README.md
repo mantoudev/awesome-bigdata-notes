@@ -45,6 +45,6 @@ Learning and exercise notes.
 ## HBase
 | #   | Title                   | Tag          | Desc       |
 | --- | ----------------------- | ------------ | ---------- |
-| 1   | [Hbase architecture][4-1] | architecture | HBase 架构 |
+| 1   | [Hbase Architecture][4-1] | architecture | HBase 架构 |
 
 [4-1]: https://github.com/mantoudev/routine/blob/master/HBase/01-HBase%20architecture.md
