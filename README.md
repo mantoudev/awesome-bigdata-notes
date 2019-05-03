@@ -43,8 +43,10 @@ Learning and exercise notes.
 [15]: https://github.com/mantoudev/routine/tree/master/Concurrency/15-Condition
 
 ## HBase
-| #   | Title                   | Tag          | Desc       |
-| --- | ----------------------- | ------------ | ---------- |
-| 1   | [Hbase Architecture][4-1] | architecture | HBase 架构 |
+| #   | Title                     | Tag                | Desc           |
+| --- | ------------------------- | ------------------ | -------------- |
+| 1   | [Hbase Architecture][4-1] | architecture       | HBase 架构     |
+| 2   | [Hbase Architecture][4-2] | Read Write Process | HBase 读写流程 |
 
-[4-1]: https://github.com/mantoudev/routine/blob/master/HBase/01-HBase%20architecture.md
+[4-1]: https://github.com/mantoudev/routine/tree/master/HBase/01-Hbase%20Architecture
+[4-2]: https://github.com/mantoudev/routine/tree/master/HBase/02-Read%20Write%20Process
