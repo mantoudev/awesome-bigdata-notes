@@ -18,7 +18,7 @@ Learning and exercise notes.
   - [Kylin](#Kylin)
 
 ## Java
-// coming soon...
+// Coming soon...
 
 ## Concurrency
 | #   | Title                                | Tag                  | Desc                               |
@@ -69,13 +69,13 @@ Learning and exercise notes.
 | 1   | [Impala Architecture][9-1] | Architecture | Impala 架构 |
 
 ## Spark
-// coming soon...
+// Coming soon...
 
 ## Flink
-// coming soon...
+// Coming soon...
 
 ## Kylin
-// coming soon...
+// Coming soon...
 
 [2-1]: https://github.com/mantoudev/routine/tree/master/Concurrency/01-Visibility%20%26%20Atomic%20%26%20Order
 [2-2]: https://github.com/mantoudev/routine/tree/master/Concurrency/02-Java%20Meroy%20Model
@@ -89,15 +89,15 @@ Learning and exercise notes.
 [2-10]: https://github.com/mantoudev/routine/tree/master/Concurrency/10-Thread:lifecyle
 [2-11]: https://github.com/mantoudev/routine/tree/master/Concurrency/11-Thread:localVariable
 [2-12]: https://github.com/mantoudev/routine/tree/master/Concurrency/12-OO%20thinking%20for%20concurrency
-[2-14]: https://github.com/mantoudev/routine/tree/master/Concurrency/14-Lock
-[2-15]: https://github.com/mantoudev/routine/tree/master/Concurrency/15-Condition
+[2-13]: https://github.com/mantoudev/routine/tree/master/Concurrency/14-Lock
+[2-14]: https://github.com/mantoudev/routine/tree/master/Concurrency/15-Condition
 
 [3-1]: https://github.com/mantoudev/routine/tree/master/JVM/01-JK
 [3-2]: https://github.com/mantoudev/routine/tree/master/JVM/02-Class%20Loader
 
-[4-1]: https://github.com/mantoudev/routine/tree/master/HBase/01-Hbase%20Architecture
-[4-2]: https://github.com/mantoudev/routine/tree/master/HBase/02-Read%20Write%20Process
-
 [6-1]: https://github.com/mantoudev/routine/tree/master/MR/01-Architecture
+
+[7-1]: https://github.com/mantoudev/routine/tree/master/HBase/01-Hbase%20Architecture
+[7-2]: https://github.com/mantoudev/routine/tree/master/HBase/0Concurrency-Read%20Write%20Process
 
 [9-1]: https://github.com/mantoudev/routine/tree/master/Impala/01-Introduce
