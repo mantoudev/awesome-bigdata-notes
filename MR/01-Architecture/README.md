@@ -64,6 +64,7 @@ Hadoop为每个split创建一个Map任务，split 的多少决定了Map任务的
 - 通常设置比reduce任务槽数目稍微小一些的Reduce任务个数（这样可以预留一些系统资源处理可能发生的错误）
 
 ## 4. Shuffle
+Shuffle过程简介
 ![](assets/markdown-img-paste-2019080413423306.png)
 
 ### 4.1 Map端的Shuffle过程
@@ -93,3 +94,6 @@ Hadoop为每个split创建一个Map任务，split 的多少决定了Map任务的
 - Reduce领取数据先放入缓存，来自不同Map机器，先归并，再合并，写入磁盘
 - 多个溢写文件归并成一个或多个大文件，文件中的键值对是排序的
 - 当数据很少时，不需要溢写到磁盘，直接在缓存中归并，然后输出给Reduce
+
+## 5. MapReduce应用程序执行过程
+![](assets/markdown-img-paste-20190804144925921.png)
