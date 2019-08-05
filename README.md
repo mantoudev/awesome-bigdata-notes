@@ -101,7 +101,7 @@ Learning and exercise notes.
 
 [4-1]: https://github.com/mantoudev/routine/tree/master/HDFS/01-Architecture
 [4-2]: https://github.com/mantoudev/routine/tree/master/HDFS/02-Read%20Write%20Process
-[4-3]: https://github.com/mantoudev/routine/tree/master/HDFS/03-HA%20Federation
+[4-3]: https://github.com/mantoudev/awesome-bigdata-notes/tree/master/HDFS/03-HA%20and%20Federation
 
 [6-1]: https://github.com/mantoudev/routine/tree/master/MR/01-Architecture
 
