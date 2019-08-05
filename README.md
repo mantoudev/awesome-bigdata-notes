@@ -1,4 +1,4 @@
-# Routine
+# Awesome BigData Notes
 Learning and exercise notes.
 
 - Java
@@ -45,7 +45,11 @@ Learning and exercise notes.
 | 2   | [Class loader][3-2] | ClassLoader | 类加载 |
 
 ## HDFS
-// coming soon...
+| #   | Title                     | Tag                   | Desc                    |
+| --- | ------------------------- | --------------------- | ----------------------- |
+| 1   | [Architecture][4-1]       | Architecture, Storage | HDFS架构                |
+| 2   | [Read Write Process][4-2] | Read, Write           | HDFS读写流程            |
+| 3   | [HA and Federation][4-3]  | HA, Federation        | 高可用，Federation HDFS |
 
 ## YARN
 // coming soon...
@@ -94,6 +98,10 @@ Learning and exercise notes.
 
 [3-1]: https://github.com/mantoudev/routine/tree/master/JVM/01-JK
 [3-2]: https://github.com/mantoudev/routine/tree/master/JVM/02-Class%20Loader
+
+[4-1]: https://github.com/mantoudev/routine/tree/master/HDFS/01-Architecture
+[4-2]: https://github.com/mantoudev/routine/tree/master/HDFS/02-Read%20Write%20Process
+[4-3]: https://github.com/mantoudev/routine/tree/master/HDFS/03-HA%20Federation
 
 [6-1]: https://github.com/mantoudev/routine/tree/master/MR/01-Architecture
 
